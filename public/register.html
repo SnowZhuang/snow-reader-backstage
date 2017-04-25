@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+    .register{ margin-top: 100px; }
+    form{ padding:20px;background-color: #eee; border-radius: 10px; }
+   /* .true{ background-color: red; }
+    .false{background-color:green;}*/
+   .form-group { margin:5px 0px; }
+   .form-group p{ height:15px;  text-align:right;color:#cc6600; line-height: 15px;margin-bottom: 0px;}
+      
+    </style>
+    }
+  </head>
+  <body>
+    <div class="container">
+      <div class="row register ">
+        <form class="col-lg-4 col-lg-offset-4" >
+          <div class="form-group has-feedback" id="emailForm">
+            <label for="exampleInputEmail1">Email address</label>
+            <input validate="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email" autocomplete="off">
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <p id="usernameTip">rr</p>
+          </div>
+          <div class="form-group has-feedback" id="password1Form">
+            <label for="exampleInputPassword1">Password</label>
+            <input validate="minLength|6" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+             <p id="password1Tip" ></p>
+          </div>
+
+          <div class="form-group has-feedback" id="password2Form">
+            <label for="exampleInputPassword2">Ensure you Password</label>
+            <input validate="equals|exampleInputPassword1" type="password" class="form-control" id="exampleInputPassword2" placeholder="Ensure you Password">
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            <p id="password2Tip" ></p>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Check me out
+            </label>
+          </div>
+          <button id="submit-btn" type="button" class="btn btn-default">注册</button>
+
+        </form>
+      </div>
+    </div>
+    <script src="./lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8" ></script>
+    <script type="./js/ArrayUtils.js"></script>
+    <script src="./js/Validator.js"  ></script>
+    <script src="./js/register.js"  ></script>
+    
+    
+    
+  </body>
+</html>

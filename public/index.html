@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TODO LIST</title>
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+    /* .container{ background-image:url("images/dog.jpg");}*/
+    *{font-family: "微软雅黑"；}
+    .header{position:relative; background-image: url("images/bg1.jpg"); background-position: right center; height:150px; }
+    .title{ margin-left: 50px;}
+    .title lable:nth-child(1){font-size:80px;}
+    .title lable:nth-child(2){background-color:#009966; color:#FF99CC; letter-spacing: 5px;}
+    .title lable:nth-child(4){position: relative; left:130px;top:-20px;  width: 290px; border-bottom:dotted 2px green;}
+    .user{ color: red; position: absolute; top:70px; right:50px; }
+    .user span{ margin-right: 30px; cursor: pointer; font-size:24px;color:#003333;}
+    .user span a{ text-decoration:none; color:#003333;  margin-left:5px;}
+    .navigation{ background-color:#15736E;}
+    
+    .navigation div ul li a{ text-decoration: none; color:#000;font-size: 18px; font-weight:bold; }
+    .main{/*poacity:0.9; filter: alpha(opacity=90);*/ /*background-image: url("images/bg2.jpg"); background-position: left top; */padding: 20px 20px 20px 10px; background-color:#B7F2F1; }
+    .main ul { margin:20px 0px;}
+    .main ul li { border-radius: 10px; }
+    .main ul li a{ color:#003300;font-size: 16px; font-weight:bold; }
+    #right-column{ padding:10px; }
+    .bookContain{ border-bottom: solid 2px #eee; padding: 10px; }
+    .book-instruction{clear:both; padding: 10px 50px; margin-top:10px;}
+    
+    </style>
+  </head>
+  <body>
+    <div class="container" >
+        <!--  头部 -->
+        <div class="row header ">
+            <!--  标题区域 -->
+            <div class="title">
+              <lable >dogear</lable>
+              <lable >全文RSS推送服务</lable>
+              <br>
+              <lable>支持Kindle、多看和Nook等移动电子阅读设备</lable>
+            </div>
+            <!-- 用户登录注册区域 -->
+            <div class="user">
+              <span class="glyphicon glyphicon-user"><a href="login.html">登录</a></span>
+              <span class="glyphicon glyphicon-pencil"><a href="register.html">注册</a></span>
+            </div>
+        </div>
+        <!-- 导航条 -->
+        <div class="row navigation">
+          <div class=" col-lg-8 col-lg-offset-2">
+            <ul class="nav nav-pills nav-justified">
+              <li role="presentation" ><a href="#">推荐</a></li>
+              <li role="presentation" ><a href="#">全部</a></li>
+              <li role="presentation" > <a href="#">排行榜</a></li>
+              <li role="presentation" ><a href="#">杂志</a></li>
+              <li role="presentation" ><a href="#">我的订阅</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- 主体区域 -->
+        <div class="row main">
+            <!-- 左边区域 -->
+            <div class="left-column col-lg-3" >
+                <!-- 搜索查询区域 -->
+                <div class="search" style="position: relative;" >             
+                    <input type="text " class="form-control" placeholder="搜索" >
+                    <span class=" glyphicon glyphicon-search" aria-hidden="true" style="position: absolute; top: 10px; right:30px;">
+                    </span>
+                </div>
+                <!-- 分类列表  -->         
+                <ul  id="categoryList" class="nav nav-pills nav-stacked text-center ">
+                    <li role="presentation"><a href="#" onclick="loadSubcribeItems()">全部</a></li>
+                </ul>
+            </div>
+            <!-- 右边区域 -->
+            <div id="rbight-column" class=" col-lg-9 panel panel-default"  >
+                <!-- 书本容器 -->
+                <div class="bookContain">
+                    <div class="book-name pull-left ">
+                        <img src="/images/bg1.jpg" width="20px" height="20px">
+                        <a >书籍名字</a>
+                    </div>
+                    <div class="pull-right">  
+                        <button class="btn btn-default  "  >订阅</button>
+                    </div>
+                    <div class="book-instruction " >
+                      功能介绍：小道消息,只有小道消息才能拯救中国互联网;只有小道消息才能拯救中国创业者. 不关注小道消息,关注谁?
+                    </div>
+                    <div class="book-subscribeMessage" style="text-align: right;">时间.订阅人数
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>  
+  </body>
+  <script src="/lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/javascripts/index.js" type="text/javascript" charset="utf-8"></script>
+</html>
