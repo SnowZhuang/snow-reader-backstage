@@ -1,3 +1,19 @@
+
+
+//先获取登录用户信息，若获取不到，直接跳转回登录页面
+
+$.ajax({"url":"/users/currentUserInfos","method":"get"})
+    .done(function(user){
+       if (user.username){
+           $("#userinfo-username").html(user.username);
+           $("#login").css("display","none");
+           $("#register").css("display","none");
+       }else{
+           $("#userinfo-username").css("display","none");
+       }
+    });
+
+
 $.ajax({
     "url": "/categorys",
     "method": "get"

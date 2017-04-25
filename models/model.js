@@ -2,6 +2,8 @@ var orm = require("orm");
 
 var Models = {};
 orm.connect("mysql://root:root@127.0.0.1:3306/snow-reader", function (err, db) {
+    //  ORM object relation mapping
+    // category_name
     Models.categorys = db.define("category", {
         id: Number,
         categoryName: {type: 'text', mapsTo: "category_name"}
@@ -18,7 +20,10 @@ orm.connect("mysql://root:root@127.0.0.1:3306/snow-reader", function (err, db) {
         categoryId: {type:'number',mapsTo:"category_id"},
         subscribeName: {type: 'text', mapsTo: "subscribe_name"},
         subscribeInstruction: {type: 'text', mapsTo: "subscribe_instruction"}
-    })
+    });
+
+
+
 });
 
 

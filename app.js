@@ -2,11 +2,22 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var session = require('express-session'); //如果要使用session，需要单独包含这个模块
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var RedisStore = require('connect-redis')(session);
 
 
 //var models = require("./models/model")
+
+
+
+
+
+
+
+
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -14,6 +25,24 @@ var categorys = require('./routes/categorys');
 var subscribeItems = require('./routes/subscribeItems');
 
 var app = express();
+
+
+// 设置 Session
+app.use(session({
+    store: new RedisStore({
+        host: "localhost",
+        port: 6379,
+        db: "0"
+    }),
+    key: 'sid',
+    resave:true,
+    saveUninitialized:true,
+    secret: 'keyboard cat'
+}));
+
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
