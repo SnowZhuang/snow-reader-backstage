@@ -6,26 +6,13 @@ var session = require('express-session'); //如果要使用session，需要单�
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var RedisStore = require('connect-redis')(session);
-
-
 //var models = require("./models/model")
-
-
-
-
-
-
-
-
-
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var categorys = require('./routes/categorys');
 var subscribeItems = require('./routes/subscribeItems');
-
 var app = express();
-
 
 // 设置 Session
 app.use(session({
@@ -39,10 +26,6 @@ app.use(session({
     saveUninitialized:true,
     secret: 'keyboard cat'
 }));
-
-
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -61,6 +44,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/categorys',categorys);
 app.use('/subscribeItems',subscribeItems);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

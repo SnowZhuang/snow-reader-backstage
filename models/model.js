@@ -1,6 +1,9 @@
 var orm = require("orm");
-
 var Models = {};
+
+
+
+
 orm.connect("mysql://root:root@127.0.0.1:3306/snow-reader", function (err, db) {
     //  ORM object relation mapping
     // category_name
@@ -13,6 +16,7 @@ orm.connect("mysql://root:root@127.0.0.1:3306/snow-reader", function (err, db) {
         id: Number,
         username: String,
         password: String
+    },{
     });
 
     Models.subscribeItems = db.define("subscribe_item", {
@@ -22,9 +26,12 @@ orm.connect("mysql://root:root@127.0.0.1:3306/snow-reader", function (err, db) {
         subscribeInstruction: {type: 'text', mapsTo: "subscribe_instruction"}
     });
 
-
+    Models.userSubscribe = db.define("user_subscribe",{
+        id:Number,
+        userId:{type:'number',mapsTo:"user_id"},
+        itemId:{type:'number',mapsTo:"item_id"}
+    })
 
 });
-
 
 module.exports = Models;

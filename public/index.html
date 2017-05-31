@@ -12,9 +12,10 @@
 
         .header {
             position: relative;
-            background-image: url("images/bg1.jpg");
-            background-position: right center;
-            height: 150px;
+            background-color: #eee;
+            /*background-image: url("images/bg1.jpg");*/
+            /*background-position: right center;*/
+          */
         }
 
         .title {
@@ -26,8 +27,8 @@
         }
 
         .title lable:nth-child(2) {
-            background-color: #009966;
-            color: #FF99CC;
+            background-color:#FAF35E  ;
+            color: #055049;
             letter-spacing: 5px;
         }
 
@@ -37,6 +38,7 @@
             top: -20px;
             width: 290px;
             border-bottom: dotted 2px green;
+            background-color:#A1E3D8 ;
         }
 
         .user {
@@ -50,17 +52,18 @@
             margin-right: 30px;
             cursor: pointer;
             font-size: 24px;
-            color: #003333;
+            color: #055049;
         }
 
         .user span a {
             text-decoration: none;
-            color: #003333;
+            color: #055049;
             margin-left: 5px;
         }
+        .dispear{ display: none;}
 
         .navigation {
-            background-color: #15736E;
+            background-color: #069A8E;
         }
 
         .navigation div ul li a {
@@ -70,9 +73,9 @@
             font-weight: bold;
         }
 
-        .main { /*poacity:0.9; filter: alpha(opacity=90);*/ /*background-image: url("images/bg2.jpg"); background-position: left top; */
+        .main { /*poacity:0.9; filter: alpha(opacity=90);*/ /*background-image: url("images/bg2.jpg"); background-position: left top; #ddf5f7;*/
             padding: 20px 20px 20px 10px;
-            background-color: #B7F2F1;
+            background-color:#eee;
         }
 
         .main ul {
@@ -112,21 +115,22 @@
     <div class="row header ">
         <!--  标题区域 -->
         <div class="title">
-            <lable>dogear</lable>
+            <lable>reader</lable>
             <lable>全文RSS推送服务</lable>
             <br>
             <lable>支持Kindle、多看和Nook等移动电子阅读设备</lable>
         </div>
         <!-- 用户登录注册区域 -->
         <div class="user">
-            <span id="userinfo-username"  class="glyphicon glyphicon-user"></span>
-            <span id="login" class="glyphicon glyphicon-user"><a href="login.html">登录</a></span>
-            <span id="register" class="glyphicon glyphicon-pencil"><a href="register.html">注册</a></span>
+            <span id="userinfo-username"  class="glyphicon glyphicon-user dispear"></span>
+            <span id="exit" class="dispear" onclick="logout()"><a>退出</a></span></span>
+            <span id="login" class="glyphicon glyphicon-user"><a href="login.html" target="_blank;">登录</a></span>
+            <span id="register" class="glyphicon glyphicon-pencil"><a href="register.html" target="_blank">注册</a></span>
         </div>
     </div>
     <!-- 导航条 -->
     <div class="row navigation">
-        <div class=" col-lg-8 col-lg-offset-2">
+        <div class=" col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2">
             <ul class="nav nav-pills nav-justified">
                 <li role="presentation"><a href="#">推荐</a></li>
                 <li role="presentation"><a href="#">全部</a></li>
@@ -139,7 +143,7 @@
     <!-- 主体区域 -->
     <div class="row main">
         <!-- 左边区域 -->
-        <div class="left-column col-lg-3">
+        <div class="left-column col-lg-3 col-sm-3">
             <!-- 搜索查询区域 -->
             <div class="search" style="position: relative;">
                 <input type="text " class="form-control" placeholder="搜索">
@@ -149,11 +153,11 @@
             </div>
             <!-- 分类列表  -->
             <ul id="categoryList" class="nav nav-pills nav-stacked text-center ">
-                <li role="presentation"><a href="#" onclick="loadSubcribeItems()">全部</a></li>
+                <li  id="aa" role="presentation"><a href="#" onclick="loadSubcribeItems()" >全部</a></li>
             </ul>
         </div>
         <!-- 右边区域 -->
-        <div id="rbight-column" class=" col-lg-9 panel panel-default">
+        <div id="rbight-column" class=" col-lg-9 col-sm-9 panel panel-default">
             <!-- 书本容器 -->
             <div class="bookContain">
                 <div class="book-name pull-left ">
@@ -173,6 +177,6 @@
     </div>
 </div>
 </body>
-<script src="/lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
-<script src="/javascripts/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="./lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="./javascripts/index.js" type="text/javascript" charset="utf-8"></script>
 </html>

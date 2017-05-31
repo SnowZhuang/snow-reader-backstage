@@ -5,10 +5,9 @@
     <title>TODO LIST</title>
     <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.css">
     <style type="text/css">
-    .register{ margin-top: 100px; }
-    form{ padding:20px;background-color: #eee; border-radius: 10px; }
-   /* .true{ background-color: red; }
-    .false{background-color:green;}*/
+    .registerContainer{ margin-top: 100px; }
+    .register{background-color: #069A8E;}
+    form{ padding:20px;background-color: #eee; border-radius: 10px;margin-bottom: 20px; }
    .form-group { margin:5px 0px; }
    .form-group p{ height:15px;  text-align:right;color:#cc6600; line-height: 15px;margin-bottom: 0px;}
       
@@ -17,13 +16,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="row register ">
-        <form class="col-lg-4 col-lg-offset-4" >
+      <div class="row registerContainer ">
+        <div class="register col-lg-4 col-lg-offset-4">
+          <h2>注册</h2>
+          <form >
           <div class="form-group has-feedback" id="emailForm">
             <label for="exampleInputEmail1">Email address</label>
             <input validate="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email" autocomplete="off">
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-            <p id="usernameTip">rr</p>
+            <p id="usernameTip"></p>
           </div>
           <div class="form-group has-feedback" id="password1Form">
             <label for="exampleInputPassword1">Password</label>
@@ -46,12 +47,13 @@
           <button id="submit-btn" type="button" class="btn btn-default">注册</button>
 
         </form>
+        </div>
       </div>
     </div>
     <script src="./lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8" ></script>
     <script type="./js/ArrayUtils.js"></script>
-    <script src="./js/Validator.js"  ></script>
-    <script src="./js/register.js"  ></script>
+    <!--<script src="./javascripts/Validator.js"  ></script>-->
+    <script src="./javascripts/register.js"  ></script>
     
     
     

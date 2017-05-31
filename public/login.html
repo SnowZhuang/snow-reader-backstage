@@ -5,16 +5,19 @@
     <title>TODO LIST</title>
     <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.css">
     <style type="text/css">
-    .register{ margin-top: 100px; }
-    form{ padding:20px;background-color: #eee; border-radius: 10px; }
-    
+    .loginContainer{ margin-top: 100px; }
+    form{ padding:20px;background-color: #eee; border-radius: 10px; margin-bottom:20px;}
+    .login{background-color: #069A8E;}
+
       
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="row register">
-        <form class="col-lg-6 col-lg-offset-3" >
+      <div class="row loginContainer">
+        <div class=" login col-lg-4 col-lg-offset-4 ">
+          <h2>登录</h2>
+          <form >
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input validate="email" type="email" class="form-control" id="user-name" placeholder="Email">
@@ -26,6 +29,7 @@
           
           <button  id="login-btn" type="button" class="btn btn-default">登录</button>
         </form>
+      </div>
       </div>
     </div>
     <script src="./lib/jquery/dist/jquery.js" type="text/javascript" charset="utf-8" ></script>
